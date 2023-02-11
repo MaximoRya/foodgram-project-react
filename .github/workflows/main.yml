@@ -43,7 +43,7 @@ jobs:
           push: true
           context: backend/
           file: backend/Dockerfile
-          tags: maliarda/foodgrambackend:latest
+          tags: trolraf/foodgrambackend:latest
 
       - name: Push frontend to Docker Hub
         uses: docker/build-push-action@v2
@@ -51,7 +51,7 @@ jobs:
           push: true
           context: frontend/
           file: frontend/Dockerfile
-          tags: maliarda/foodgramfrontend:latest
+          tags: trolraf/foodgramfrontend:latest
 
   deploy:
     runs-on: ubuntu-latest
