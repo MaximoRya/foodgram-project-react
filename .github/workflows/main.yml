@@ -4,10 +4,6 @@ jobs:
   tests:
     runs-on: ubuntu-latest
 
-jobs:
-  tests:
-    runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python
