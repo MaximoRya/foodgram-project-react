@@ -14,6 +14,8 @@ DEBUG = os.getenv("DEBUG", default=False)
 
 ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", default="*").split(",")
 
+EMPTY_VALUE_DISPLAY = '-пусто-'
+
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",

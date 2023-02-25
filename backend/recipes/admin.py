@@ -1,4 +1,5 @@
 from django.contrib import admin
+from backend.settings import EMPTY_VALUE_DISPLAY
 
 from .models import (
     FavoriteRecipe,
@@ -14,7 +15,7 @@ class IngredientAdmin(admin.ModelAdmin):
     list_display = ("id", "name", "measurement_unit")
     list_filter = ("name",)
     search_fields = ("name",)
-    empty_value_display = "-пусто-"
+    empty_value_display = EMPTY_VALUE_DISPLAY
 
 
 @admin.register(Recipe)
