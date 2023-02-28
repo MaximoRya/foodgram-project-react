@@ -3,8 +3,9 @@ import csv
 from django.core.management.base import BaseCommand
 
 from recipes.models import Ingredient
+from recipes.serializers import IngredientSerializer
 
-PATH = "backend/data"
+PATH = "/data"
 
 
 class Command(BaseCommand):
@@ -22,3 +23,12 @@ class Command(BaseCommand):
                 for row in reader
             ]
             Ingredient.objects.bulk_create(ingredients_to_add)
+
+class IngredientViewSet(viewsets.ModelViewSet):
+    help = "Сериализатор вывода ингредиентов."
+    queryset = Ingredient.objects.all()
+    serializer_class = IngredientSerializer
+    permission_classes = (IsAdminOrReadOnly,)
+    filter_backends = (DjangoFilterBackend,)
+    filterset_class = IngredientFilter
+    pagination_class = None
