@@ -1,13 +1,9 @@
 from django.contrib import admin
+
 from backend.settings import EMPTY_VALUE_DISPLAY
 
-from .models import (
-    FavoriteRecipe,
-    Ingredient,
-    Recipe,
-    RecipeIngredient,
-    ShoppingCart,
-)
+from .models import (FavoriteRecipe, Ingredient, Recipe, RecipeIngredient,
+                     ShoppingCart)
 
 
 @admin.register(Ingredient)

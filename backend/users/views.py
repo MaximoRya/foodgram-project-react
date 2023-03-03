@@ -5,13 +5,9 @@ from rest_framework.generics import get_object_or_404
 from rest_framework.pagination import PageNumberPagination
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from rest_framework.response import Response
-
 from users.models import Follow, User
-from users.serializers import (
-    CustomUserSerializer,
-    FollowSerializer,
-    ShowFollowsSerializer,
-)
+from users.serializers import (CustomUserSerializer, FollowSerializer,
+                               ShowFollowsSerializer)
 
 
 class CustomUserViewSet(UserViewSet):
