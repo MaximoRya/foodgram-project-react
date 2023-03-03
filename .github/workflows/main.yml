@@ -63,8 +63,8 @@ jobs:
           passphrase: ${{ secrets.PASSPHRASE }}
           stack_file_name: docker-compose.yaml
           script: |
-            sudo docker pull maliarda/foodgrambackend:latest
-            sudo docker pull maliarda/foodgramfrontend:latest
+            sudo docker pull trolraf/foodgrambackend:latest
+            sudo docker pull trolraf/foodgramfrontend:latest
             sudo docker compose stop
             sudo docker compose rm backend
             touch .env
