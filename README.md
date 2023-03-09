@@ -170,7 +170,7 @@ docker-compose exec backend python manage.py loaddata dump.json
 
 Теперь у Вас готовый проект с небольшой базой рецептов и пользователей.
 
-Создайт е суперпользователя, если необходимо:
+Создайте суперпользователя, если необходимо:
 ```
 docker-compose exec backend python manage.py createsuperuser
 ```
