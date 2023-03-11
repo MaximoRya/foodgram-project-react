@@ -12,7 +12,7 @@ SECRET_KEY = os.getenv("SECRET_KEY", default="default_secret_key")
 
 DEBUG = os.getenv("DEBUG", default=False)
 
-CSRF_TRUSTED_ORIGINS = ['http://localhost:80'] 
+CSRF_TRUSTED_ORIGINS = ['http://localhost:80']
 
 ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", default="*").split(",")
 
