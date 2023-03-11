@@ -12,9 +12,15 @@ SECRET_KEY = os.getenv("SECRET_KEY", default="default_secret_key")
 
 DEBUG = os.getenv("DEBUG", default=False)
 
+CSRF_TRUSTED_ORIGINS = ['http://localhost:80'] 
+
 ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", default="*").split(",")
 
 EMPTY_VALUE_DISPLAY = '-пусто-'
+
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost:80',
+]
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -28,6 +34,7 @@ INSTALLED_APPS = [
     "tags.apps.TagsConfig",
     "rest_framework",
     "rest_framework.authtoken",
+    "corsheaders",
     "djoser",
     "colorfield",
     "django_filters",
@@ -36,6 +43,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
