@@ -12,7 +12,13 @@ SECRET_KEY = os.getenv("SECRET_KEY", default="default_secret_key")
 
 DEBUG = os.getenv("DEBUG", default=True)
 
-ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", default="*").split(",")
+CSRF_HEADER_NAME = "X-XSRF-TOKEN"
+
+CSRF_TOKEN_HTTPONLY = False
+
+CSRF_TRUSTED_ORIGINS = ['http://localhost:80']
+
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", default=["*","backend"]).split(",")
 
 EMPTY_VALUE_DISPLAY = '-пусто-'
 
