@@ -18,7 +18,7 @@ CSRF_TOKEN_HTTPONLY = False
 
 CSRF_TRUSTED_ORIGINS = ['http://localhost:80']
 
-ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", default=["*","backend"]).split(",")
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", default=["*", "backend"]).split(",")
 
 EMPTY_VALUE_DISPLAY = '-пусто-'
 
