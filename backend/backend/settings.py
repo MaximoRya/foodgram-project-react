@@ -12,13 +12,15 @@ SECRET_KEY = os.getenv("SECRET_KEY", default="default_secret_key")
 
 DEBUG = os.getenv("DEBUG", default=True)
 
-CSRF_HEADER_NAME = "X-XSRF-TOKEN"
+# CSRF_HEADER_NAME = "X-XSRF-TOKEN"
 
-CSRF_TOKEN_HTTPONLY = False
+# CSRF_TOKEN_HTTPONLY = False
 
-CSRF_TRUSTED_ORIGINS = ['http://localhost:80']
+# CSRF_TRUSTED_ORIGINS = ['http://localhost:80']
 
-ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", default=["*", "backend"]).split(",")
+CORS_ORIGIN_ALLOW_ALL = True
+
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", default=["*", "backend", "51.250.70.89"]).split(",")
 
 EMPTY_VALUE_DISPLAY = '-пусто-'
 
@@ -34,12 +36,14 @@ INSTALLED_APPS = [
     "tags.apps.TagsConfig",
     "rest_framework",
     "rest_framework.authtoken",
+    "corsheaders",
     "djoser",
     "colorfield",
     "django_filters",
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
