@@ -1,5 +1,17 @@
 ![Build Status](https://github.com/MaximoRya/foodgram-project-react/workflows/foodgram_workflow/badge.svg)
 
+#  Данные для ревью
+
+Проект развёрнут по адресу:
+http://51.250.70.89
+
+``` 
+Данные акаунтов для теста 
+```
+Администратор: логин: Trolraf, пароль: zaqwer123
+Пользователи: логин: test4@mail.ru, пароль: test_pass
+логин: test3@mail.ru, пароль: test_pass
+
 
 #  Foodgram, «Продуктовый помощник »
 
@@ -75,12 +87,6 @@ python manage.py migrate
 python manage.py loaddata dump.json
 ```
 
-Данные аккаунтов из базы:
-```
-Администратор: логин: sneakyfox@gmail.com, пароль: asdf4567
-Пользователи: логин: grumpycat@mail.ru, пароль: zxcv4567 
-логин: racoon_paws@gmail.com, пароль: asdf4567
-```
 Если вся база не нужна, есть возможность загрузить отдельно данные об ингредиентах:
 ```
 python manage.py parse_ingredients_csv

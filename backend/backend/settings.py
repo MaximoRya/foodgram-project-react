@@ -20,7 +20,7 @@ DEBUG = os.getenv("DEBUG", default=True)
 
 CORS_ORIGIN_ALLOW_ALL = True
 
-ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", default=["*", "backend", "51.250.70.89"]).split(",")
+ALLOWED_HOSTS = ["*", "backend", "51.250.70.89"]
 
 EMPTY_VALUE_DISPLAY = '-пусто-'
 
@@ -35,17 +35,17 @@ INSTALLED_APPS = [
     "recipes.apps.RecipesConfig",
     "tags.apps.TagsConfig",
     "rest_framework",
-    "rest_framework.authtoken",
     "corsheaders",
+    "rest_framework.authtoken",
     "djoser",
     "colorfield",
     "django_filters",
 ]
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
